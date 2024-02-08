@@ -17,11 +17,7 @@ async function apagar(id) {
 
 }
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-const juego = [
+const plantilla = [
     ["verde", "rojo"],
     ["amarillo", "azul"]
 ]
@@ -30,9 +26,9 @@ function mostrarJuego() {
     var resultado = document.getElementById("juego");
     resultado.innerHTML = "";
 
-    for (let i = 0; i < juego.length; i++) {
-        for (let j = 0; j < juego[i].length; j++) {
-            resultado.innerHTML += '<button onclick="clic(event)" class="boton' + '" id="' + juego[i][j] + '"' + '</button>';
+    for (let i = 0; i < plantilla.length; i++) {
+        for (let j = 0; j < plantilla[i].length; j++) {
+            resultado.innerHTML += '<button onclick="clic(event)" class="boton' + '" id="' + plantilla[i][j] + '"' + '</button>';
         }
         resultado.innerHTML += "<br>";
     }
@@ -45,6 +41,7 @@ function clic(event) {
     switch (id) {
         case "verde":
             boton.style.backgroundColor = "hsla(120, 100%, 50%, 1)";
+            jugar(id);
             apagar(id);
             break;
         case "rojo":
@@ -84,7 +81,8 @@ function IA() {
     }
 }
 
-function juego() {
+async function juego() {
+    IA();
     for (let i = 0; i < array.length; i++) {
         switch (array[i]) {
             case "verde":
@@ -97,8 +95,18 @@ function juego() {
                 document.getElementById('amarillo').style.backgroundColor = "hsl(60, 100%, 50%)";
                 break;
             case "azul":
-                document.getElementById('azul').style.backgroundColor = "hsl(240, 100%, 25%)";
+                document.getElementById('azul').style.backgroundColor = "hsl(240, 100%, 50%)";
         }
+        apagar(array[i]);
+        await delay(500);
     }
+}
+
+function jugar() {
+
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
