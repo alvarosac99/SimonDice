@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Plantilla</title>
+    <script src="main.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-size: larger;
+        }
+
+
+
+        .boton {
+            text-align: center;
+            margin: 5px;
+            height: 50px;
+            width: 50px;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            border-radius: 5px;
+            background: #ffffff;
+        }
+
+        #verde {
+            background: hsl(120, 100%, 25%);
+        }
+
+        #rojo {
+            background: hsl(0, 100%, 25%);
+        }
+
+        #amarillo {
+            background: hsl(60, 100%, 25%);
+        }
+
+        #azul {
+            background: hsl(240, 100%, 25%);
+        }
+
+
+
+        .boton:hover {
+            box-shadow: 0 3px #ffffff;
+            top: 1px;
+        }
+
+        .boton:active {
+            box-shadow: 0 0 #ffffff;
+            top: 5px;
+            background: #ffffff;
+        }
+    </style>
+
+
+
+</head>
+
+<body onload="mostrarJuego()">
+    <h1>SIMON DICE</h1>
+    <!-- <p id="vidas">vidas: 3</p> -->
+    <div id="juego"></div>
+</body>
+
+</html>
