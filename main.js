@@ -127,6 +127,7 @@ function comprobar() {
     for (let i = 0; i < jugador.length; i++) {
         if (jugador[i] != maquina[i]) {
             alert("perdiste");
+            maquina = [];
         }
     }
     if (jugador.length == maquina.length) {
