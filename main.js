@@ -37,6 +37,7 @@ function mostrarJuego() {
         resultado.innerHTML += "<br>";
     }
     desactivarBotones(true);
+    quitarPuntuacion(true);
 }
 
 function clic(event) {
