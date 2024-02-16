@@ -1,3 +1,6 @@
+var puntos;
+var rondas;
+
 async function apagar(id) {
 
     await delay(250);
@@ -23,7 +26,7 @@ const plantilla = [
 ]
 
 function mostrarJuego() {
-    
+
     var resultado = document.getElementById("juego");
     resultado.innerHTML = "";
 
@@ -80,7 +83,11 @@ function IA() {
     }
 }
 
+
+
 async function juego() {
+    var botonJuego = document.getElementById('comienzo');
+    botonJuego.style.display = "none";
     await delay(1000);
     IA();
     desactivarBotones(true);
@@ -136,14 +143,6 @@ function comprobar() {
         desactivarBotones(true);
     }
 }
-
-function desactivarBotones(caso) {
-    var botones = document.getElementsByClassName('boton');
-    for (var i = 0; i < botones.length; i++) {
-        botones[i].disabled = caso;
-    }
-}
-
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
