@@ -23,6 +23,7 @@ const plantilla = [
 ]
 
 function mostrarJuego() {
+    
     var resultado = document.getElementById("juego");
     resultado.innerHTML = "";
 
@@ -32,7 +33,7 @@ function mostrarJuego() {
         }
         resultado.innerHTML += "<br>";
     }
-
+    desactivarBotones(true);
 }
 
 function clic(event) {
