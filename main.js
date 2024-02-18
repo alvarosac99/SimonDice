@@ -1,5 +1,10 @@
-var puntos;
-var rondas;
+var puntos = 0;
+var rondas = 0;
+
+function actualizar() {
+    document.getElementById("rondas").innerHTML = "Ronda: " + rondas;
+    document.getElementById("puntos").innerHTML = "Puntos: " + puntos;
+}
 
 async function apagar(id) {
 
@@ -41,6 +46,8 @@ function mostrarJuego() {
 }
 
 function clic(event) {
+    puntos++;
+    actualizar();
     var id = event.target.id;
     var boton = event.target;
     switch (id) {
@@ -83,8 +90,6 @@ function IA() {
             break;
     }
 }
-
-
 
 async function juego() {
     var botonJuego = document.getElementById('comienzo');
@@ -132,14 +137,22 @@ function jugar(id) {
     comprobar();
 }
 
+
 function comprobar() {
     for (let i = 0; i < jugador.length; i++) {
         if (jugador[i] != maquina[i]) {
             alert("perdiste");
+            puntos = 0;
+            rondas = 0;
             maquina = [];
+            actualizar();
+            var botonJuego = document.getElementById('comienzo');
+            botonJuego.style.display = "";
         }
     }
     if (jugador.length == maquina.length) {
+        rondas++;
+        actualizar();
         juego();
         desactivarBotones(true);
     }
@@ -148,4 +161,3 @@ function comprobar() {
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-

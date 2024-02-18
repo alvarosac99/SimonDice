@@ -8,6 +8,7 @@ function quitarPuntuacion(caso) {
 function desactivarBotones(caso) {
     var botones = document.getElementsByClassName('boton');
     for (var i = 0; i < botones.length; i++) {
-        botones[i].hidden = caso;
+        botones[i].disabled = caso;
     }
 }
+
