@@ -158,6 +158,6 @@ function comprobar() {
     }
 }
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function delay(tiempo) {
+    return new Promise(finalizado => setTimeout(finalizado, tiempo));
 }
